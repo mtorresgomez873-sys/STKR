@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c3bq27l6a2mls"]
+
+[ext_resource type="Script" uid="uid://iaj3tjj8528m" path="res://scripts/player/player.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://bgvp0nkjdbj5f" path="res://assets/art/characters/hero/piko/piko_idle.png" id="2_dovo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbhos"]
+size = Vector2(149, 160)
+
+[node name="Player" type="CharacterBody2D" unique_id=1481734814]
+script = ExtResource("1_8afob")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1412360614]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_dovo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398941074]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_mbhos")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1226961639]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=957264788]
+root_node = NodePath("../Camera2D")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=104612422]
+root_node = NodePath("")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=493171061]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=26062928]
